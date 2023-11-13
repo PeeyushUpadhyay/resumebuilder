@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <title>Resume Craft</title>
+</head>
+
+<body>
+
+
+    <div class="header  p-5 mb-5  rounded">
+        <h1 class="text-center" style="font-size: 50px; font-weight: 700; color:    white;">Resume <Span
+                class="sp">Craft</Span></h1>
+        <p class="text-center" style="font-size: 20px; font-weight: 300; color:  white ;">"Crafting Your Career: The
+            Ultimate Resume Builder Tool"</p>
+    </div>
+    <div class="container shadow-sm p-3 mb-5 bg-white rounded" id="resume-form">
+        <div class="row">
+            <!---------- Personal information Section ---------->
+            <div class="col-md-6">
+                <h1>Personal Information</h1>
+                <hr>
+                <div class="form-group mt-4">
+                    <label for="">Choose a Profile Picture</label>
+                    <br>
+                    <input id="imgField" type="file" class="form-control">
+                </div>
+                <div class="form-group mt-4 md-4">
+                    <label for="nameField">Your name</label>
+                    <input type="text" id="nameField" placeholder="Enter here" class="form-control">
+                </div>
+
+                <div class="form-group mt-4 md-4">
+                    <label for="nameField">Your Contact</label>
+                    <input type="text" id="contactField" placeholder="Enter here" class="form-control">
+                </div>
+                <div class="form-group mt-4 md-4">
+                    <label for="emailField">Your Email</label>
+                    <input type="email" id="emailField" placeholder="Enter here" class="form-control">
+                </div>
+                <div class="form-group mt-4 md-4">
+                    <label for="nameField">Your Address</label>
+                    <input type="text" id="addressField" placeholder="Enter here" class="form-control">
+                </div>
+                <h4 class="mt-4 md-4 mt-4 md-4">Social Links</h4>
+                <div class="form-group">
+                    <label for="nameField">Linkedin Profile</label>
+                    <input type="text" id="linkedinField" placeholder="Enter here" class="form-control">
+                </div>
+                <div class="form-group mt-4 md-4">
+                    <label for="nameField">Github Profile</label>
+                    <input type="text" id="gitField" placeholder="Enter here" class="form-control">
+                </div>
+                <div class="form-group mt-4 md-4">
+                    <label for="nameField">Your Website/Portfolio</label>
+                    <input type="text" id="stField" placeholder="Enter here" class="form-control">
+                </div>
+                <div class="form-group mt-4 md-4">
+                    <label for="nameField">Instagram Profile</label>
+                    <input type="text" id="instaField" placeholder="Enter here" class="form-control">
+                </div>
+
+            </div>
+            <!---------- Professional information Section ---------->
+            <div class="col-md-6">
+
+                <h1>Professional Information</h1>
+                <hr>
+
+                <div class="form-group mt-4">
+                    <label for="exampleFormControlTextarea1">Objective</label>
+                    <textarea class="form-control" id="objField" rows="3"></textarea>
+                </div>
+                <div class="form-group mt-4" id="edu">
+                    <label for="">Academic Qualifications</label>
+                    <textarea class="form-control eduField" rows="3">
+                </textarea>
+
+                    <div class="container" id="eduAddButton">
+                        <button class="btn btn-success mt-2" onclick="addNewField4()"> Add Field
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="form-group mt-4" id="skl">
+                    <label for="">Skills</label>
+                    <textarea class="form-control sklField" rows="3">
+                </textarea>
+
+                    <div class="container" id="sklAddButton">
+                        <button class="btn btn-success mt-2" onclick="addNewField1()"> Add Field
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4" id="ed">
+                    <label for="">Projects</label>
+                    <textarea class="form-control edField" rows="3">
+                </textarea>
+
+                    <div class="container" id="edAddButton">
+                        <button class="btn btn-success mt-2" onclick="addNewField2()"> Add Field
+                        </button>
+                    </div>
+                </div>
+
+
+                <!---------your  Certifications Section ---------->
+                <div class="form-group mt-4" id="ce">
+                    <label for="">Certifications</label>
+                    <textarea class="form-control ceField" rows="3">
+                </textarea>
+
+                    <div class="container" id="ceAddButton">
+                        <button class="btn btn-success mt-2" onclick="addNewField3()"> Add Field
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-4">
+                <div class="text-center">
+                    <button class="btn btn-primary" onclick="generateCv()">Generate CV</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <p class="text-center" id="footer" style="color: black;">Made by <span>Peeyush Upadhyay </span></p>
+    </div>
+
+    <!--  Template generation -->
+
+    <div class="container" id="resume-template">
+        <div class="row">
+            <div class="col-md-4 background text-center">
+                <img src="images/defaultdp.jpg" alt="default-picture" class="img-logo" id="imgT">
+                <div class="container personal">
+                    <p class="name1" id="nameT1">Peeyush Upadhyay</p>
+                    <p class="">
+                        <i class='bx bxs-edit-location' ></i>
+                        <a class="address1" id="addT1">Nainital, Uttarakhand, India</a>
+                    </p>
+                    
+                    <p class="">
+                        <i class='bx bxs-mobile' ></i>
+                        <a class="phn1" id="contactT">+91 9627138327</a>
+                    </p>
+                    
+                    <p class=""> 
+                        <i class='bx bx-envelope'></i>
+                        <a class="email1" id="emailT">peeyushupadhyay7@gmail.com</a>
+                    </p>
+
+                </div>
+                <div class="container social">
+                    <h4 class="social-head">Social Links</h4>
+                    <hr class="hr-row">
+                    <p class="">
+                        <i class='bx bxl-linkedin'></i>
+                        <a id="linkedT" href="#1">https://www.linkedin.com/in/hridayesh-adhikari-43414725a/</a>
+                    </p>
+                    <p class="">
+                        <i class='bx bxl-github'></i>
+                        <a id="gitT" href="#2">https://github.com/DeveloperHarry</a>
+                    </p>
+                    <p class="">
+                        <i class='bx bxl-instagram'></i>
+                        <a id="instaT" href="#3">https://www.instagram.com/h__4__harry/</a>
+                    </p>
+                    <p class="">
+                        <i class='bx bx-globe'></i>
+                        <a id="stT" href="#4">https://harry.in</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h1 class="text-center mt-4" id="nameT2" style="font-size: 50px; font-weight: bold;">Peeyush Upadhyay
+                </h1>
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body" id="objectiveT">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati assumenda iure hic voluptatem
+                        reiciendis eum, quas facilis earum exercitationem, accusamus iusto, voluptas ducimus suscipit
+                        quae modi. Quod accusantium, illum impedit quaerat voluptatem odio facilis reiciendis obcaecati
+                        recusandae minima? Alias, perspiciatis.
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Academic Qualifications</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="eduT">
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Skills</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="sklT">
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Projects</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="edT">
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Certifications</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="cerT">
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4 text-center">
+            <button type="button" class="btn1 btn-info" id="downloadCV">Print CV</button>
+            <button class="btn1 btn-primary" id="back" onclick="location.href='index.html';">
+                Back
+            </button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
+</body>
+
+</html>

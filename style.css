@@ -1,0 +1,118 @@
+
+.shadow {
+  box-shadow: 0 .3rem 4rem !important;
+}
+#resume-template {
+  display: none;
+}
+.header{
+  background-color: #044450;
+}
+.header .sp{
+  color: orangered;
+}
+
+
+.background {
+  background-color: #044450;
+  color: white;
+}
+
+.img-logo {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+p {
+  color: white;
+}
+
+.name1,
+.address1 {
+  font-size: 20px;
+}
+.email1,
+.phn1 {
+  font-size: 18px;
+}
+.personal {
+  padding-bottom: 10px;
+}
+
+.hr-row {
+  color: white;
+}
+a {
+  color: white;
+  text-decoration: none;
+  max-width: fit-content;
+}
+.social-head {
+  color: white;
+  font-weight: bold;
+}
+.social {
+  text-align: left;
+  padding-top: 20px;
+}
+
+
+.text-center {
+  color: #000;
+}
+.container.social a{
+  margin-left: 10px;
+}
+.txt {
+  font: 2.5rem sans-serif;
+}
+
+.btn1{
+  margin-bottom: 30px;
+  margin-right: 40px;
+  justify-content: center;
+  text-align: center;
+  color: black;
+  background-color: rgb(73, 163, 247);
+  font-family: 'Archivo', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 8px 15px;
+  border: 5px solid #044450;
+  border-radius: 0;
+  box-shadow: 12px 12px 0 -5px #044450;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+} 
+.btn1:hover{
+  color: #fff;
+  box-shadow: 0 0 0  0px #044450;
+}
+.btn1:before{
+  content: "";
+  background-color: #044450;
+  height: 140%;
+  width: 140%;
+  transform: skew(-50deg);
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  z-index: -1;
+  transition: all 0.35s ease 0s;
+}
+.btn1:hover:before{
+  top: -20%;
+  left: -20%;
+}
+
+@media only screen and (max-width: 767px){
+  .btn1{ margin-bottom: 30px; }
+}
+
+
